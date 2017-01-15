@@ -11,6 +11,7 @@ static TestAbc me;
 
 static TestAbcMethod testAbcMethod = {
 	increment,
+	decrement,
 	getValue,
 	destroy
 };
@@ -31,6 +32,11 @@ testAbc(TestAbc instance) {
 static void
 increment(void) {
 	++me->value;
+}
+
+static void
+decrement(void) {
+	--me->value;
 }
 
 static int

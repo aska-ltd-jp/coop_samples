@@ -22,8 +22,8 @@ main(int argc, char **argv) {
 	testAbc(ab)->increment();
 	printf("testAbc(ab)->increment()\n");
 	
-	testAbc(bc)->increment();
-	printf("testAbc(bc)->increment()\n");
+	testAbc(bc)->decrement();
+	printf("testAbc(bc)->decrement()\n");
 	
 	printf("\n");
 	
