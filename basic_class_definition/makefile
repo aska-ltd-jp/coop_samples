@@ -10,5 +10,6 @@ $(target): $(objs)
 main.o: TestAbc.o
 TestAbc.o: TestAbc.c  TestAbc.h
 
+.PHONY: clean
 clean:
 	rm -f $(objs) $(target)
