@@ -5,11 +5,11 @@
 
 typedef struct TestAbcTag {
 	int value;
-} TestAbcField;
+} field;
 
 static TestAbc me;
 
-static TestAbcMethod testAbcMethod = {
+static TestAbcMethod method_struct = {
 	increment,
 	decrement,
 	getValue,
@@ -18,7 +18,7 @@ static TestAbcMethod testAbcMethod = {
 
 TestAbc
 TestAbc_new(int num) {
-	TestAbc instance = (TestAbc)malloc(sizeof(TestAbcField));
+	TestAbc instance = (TestAbc)malloc(sizeof(field));
 	instance->value = num;
 	return instance;
 }
@@ -26,7 +26,7 @@ TestAbc_new(int num) {
 TestAbcMethod*
 testAbc(TestAbc instance) {
 	me = instance;
-	return &testAbcMethod;
+	return &method_struct;
 }
 
 static void

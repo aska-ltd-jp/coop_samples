@@ -13,7 +13,6 @@ main(int argc, char **argv) {
 	TestAbc bc = TestAbc_new(100);
 	
 	printf("getValue() : %18d\n", getValue());
-	
 	printf("testAbc(ab)->getValue() : %5d\n", testAbc(ab)->getValue());
 	printf("testAbc(bc)->getValue() : %5d\n", testAbc(bc)->getValue());
 	
