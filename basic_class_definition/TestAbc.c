@@ -9,6 +9,10 @@ typedef struct TestAbcTag {
 
 static TestAbc me;
 
+static TestAbcClassMethod class_method_struct = {
+	create
+};
+
 static TestAbcMethod method_struct = {
 	increment,
 	decrement,
@@ -16,8 +20,13 @@ static TestAbcMethod method_struct = {
 	destroy
 };
 
-TestAbc
-TestAbc_new(int num) {
+TestAbcClassMethod*
+TestAbc_(void) {
+	return &class_method_struct;
+}
+
+static TestAbc
+create(int num) {
 	TestAbc instance = (TestAbc)malloc(sizeof(field));
 	instance->value = num;
 	return instance;

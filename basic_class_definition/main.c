@@ -9,8 +9,8 @@ getValue(void) {
 
 int
 main(int argc, char **argv) {
-	TestAbc ab = TestAbc_new(10);
-	TestAbc bc = TestAbc_new(100);
+	TestAbc ab = TestAbc_()->create(10);
+	TestAbc bc = TestAbc_()->create(100);
 	
 	printf("getValue() : %18d\n", getValue());
 	printf("testAbc(ab)->getValue() : %5d\n", testAbc(ab)->getValue());
