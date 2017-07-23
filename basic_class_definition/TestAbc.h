@@ -1,6 +1,6 @@
 typedef struct TestAbcTag *TestAbc;
 
-typedef struct TestAbcClassMethodTab {
+typedef struct TestAbcClassMethodTag {
 	TestAbc (*create)(int);
 } TestAbcClassMethod;
 
