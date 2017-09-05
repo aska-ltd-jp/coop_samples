@@ -1,10 +1,12 @@
-typedef struct TestAbcTag *TestAbc;
+typedef struct TestAbc *TestAbc;
 
-typedef struct TestAbcClassMethodTag {
+typedef struct TestAbcClassMethod
+{
 	TestAbc (*create)(int);
 } TestAbcClassMethod;
 
-typedef struct TestAbcMethodTag {
+typedef struct TestAbcMethod
+{
 	void (*increment)(void);
 	void (*decrement)(void);
 	int (*getValue)(void);
@@ -19,7 +21,7 @@ static TestAbc
 create(int);
 
 TestAbcMethod*
-testAbc(TestAbc);
+testAbc_(TestAbc);
 
 static void
 increment(void);

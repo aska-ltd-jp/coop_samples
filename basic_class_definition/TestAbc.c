@@ -3,17 +3,20 @@
 
 #include "TestAbc.h"
 
-typedef struct TestAbcTag {
+typedef struct TestAbc
+{
 	int value;
-} field;
+} field_struct;
 
 static TestAbc me;
 
-static TestAbcClassMethod class_method_struct = {
+static TestAbcClassMethod class_method_struct =
+{
 	create
 };
 
-static TestAbcMethod method_struct = {
+static TestAbcMethod method_struct =
+{
 	increment,
 	decrement,
 	getValue,
@@ -21,40 +24,47 @@ static TestAbcMethod method_struct = {
 };
 
 TestAbcClassMethod*
-TestAbc_(void) {
+TestAbc_(void)
+{
 	return &class_method_struct;
 }
 
 static TestAbc
-create(int num) {
-	TestAbc instance = (TestAbc)malloc(sizeof(field));
+create(int num)
+{
+	TestAbc instance = (TestAbc)malloc(sizeof(field_struct));
 	instance->value = num;
 	return instance;
 }
 
 TestAbcMethod*
-testAbc(TestAbc instance) {
+testAbc_(TestAbc instance)
+{
 	me = instance;
 	return &method_struct;
 }
 
 static void
-increment(void) {
+increment(void)
+{
 	++me->value;
 }
 
 static void
-decrement(void) {
+decrement(void)
+{
 	--me->value;
 }
 
 static int
-getValue(void) {
+getValue(void)
+{
 	return me->value;
 }
 
 static void*
-destroy(void) {
+destroy(void)
+{
 	free(me);
 	return NULL;
 }
