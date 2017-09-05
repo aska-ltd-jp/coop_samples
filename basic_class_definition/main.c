@@ -9,7 +9,8 @@ getValue(void)
 }
 
 int
-main(int argc, char **argv) {
+main(int argc, char **argv)
+{
 	TestAbc ab = TestAbc_()->create(10);
 	TestAbc bc = TestAbc_()->create(100);
 	
